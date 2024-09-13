@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreekTVBox - COSMOTE SPORT 3</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <style>
+        /* Basic styles */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            height: 100%;
+            overflow: hidden;
+            background-color: #1b1b1b;
+            color: #fff;
+        }
+
+        .container {
+            display: flex;
+            height: 100vh;
+        }
+
+        .menu-list {
+            width: 25%;
+            background-color: #2b2b2b;
+            overflow-y: scroll;
+            position: relative;
+            transition: transform 0.3s ease-in-out;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        .menu-list::-webkit-scrollbar {
+            display: none;
+        }
+
+        .menu-list ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .menu-list li {
+            padding: 10px 15px;
+            cursor: pointer;
+            border-bottom: 1px solid #3b3b3b;
+            display: flex;
+            align-items: center;
+        }
+
+        .menu-list li:hover, .menu-list li.active {
+            background-color: #3b3b3b;
+        }
+
+        .channel-content {
+            width: 75%;
+            background-color: #1b1b1b;
+            display: flex;
+            flex-direction: column;
+            padding: 0;
+            overflow: hidden;
+            flex-grow: 1;
+        }
+
+        #player {
+            flex-grow: 1;
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        .select-container {
+            padding: 10px;
+            background-color: #2b2b2b;
+            text-align: center;
+        }
+
+        select {
+            padding: 10px;
+            background-color: #3b3b3b;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 10px;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            z-index: 1000;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: #fff;
+            margin: 4px 0;
+        }
+
+        #fullscreenButton {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background-color: #3b3b3b;
+            border: none;
+            padding: 10px 15px;
+            color: #fff;
+            cursor: pointer;
+            z-index: 10000;
+            border-radius: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .menu-list {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                transform: translateX(-100%);
+                z-index: 999;
+                width: 70%;
+            }
+
+            .channel-content {
+                width: 100%;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .menu-list.active {
+                transform: translateX(0);
+            }
+        }
+
+        iframe {
+            border: none;
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="hamburger" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div class="container">
+        <div class="menu-list" id="menu-list">
+            <ul>
+                
+                <a href="cs1.html"><li class="">
+                    <img style="margin-right: 5px;" src="static/images/channels/zRE8H60030jviQGxzAoc7CZ69teP3mxi.png" height=100 width=100 />
+                </li></a>
+                
+                <a href="cs2.html"><li class="">
+                    <img style="margin-right: 5px;" src="static/images/channels/AChZw2r5GuHtMbd6SkR2UxxVzit95dcf.png" height=100 width=100 />
+                </li></a>
+                
+                <a href="cs3.html"><li class="active">
+                    <img style="margin-right: 5px;" src="static/images/channels/jEnnUu8URy3TIR0CfQFbTf0pZsvsjIzN.png" height=100 width=100 />
+                </li></a>
+                
+                <a href="cs4.html"><li class="">
+                    <img style="margin-right: 5px;" src="static/images/channels/x6yCZ5pV7zawBnPED5ApCi7x1Pes1poc.png" height=100 width=100 />
+                </li></a>
+                
+                <a href="cs5.html"><li class="">
+                    <img style="margin-right: 5px;" src="static/images/channels/Pp7EsIuBVFQ4AN2jgZ9dDvfWqlbLGGwz.png" height=100 width=100 />
+                </li></a>
+                
+                <a href="cs6.html"><li class="">
+                    <img style="margin-right: 5px;" src="static/images/channels/28WpeUDAqhDAgjGaTSuJg4uWwVHr9RMs.png" height=100 width=100 />
+                </li></a>
+                
+                <a href="cs7.html"><li class="">
+                    <img style="margin-right: 5px;" src="static/images/channels/zgvdR5Y1GSMpqof5CF1gjGi4wKT78MqB.png" height=100 width=100 />
+                </li></a>
+                
+                <a href="cs8.html"><li class="">
+                    <img style="margin-right: 5px;" src="static/images/channels/ihitDdMxka4w1zRu9sLdNpFnFJsLhdMK.png" height=100 width=100 />
+                </li></a>
+                
+                <a href="cs9.html"><li class="">
+                    <img style="margin-right: 5px;" src="static/images/channels/aul5cEIegSUM5RWYCyIvvBRU4VDeX43R.png" height=100 width=100 />
+                </li></a>
+                
+                <a href="ns1.html"><li class="">
+                    <img style="margin-right: 5px;" src="static/images/channels/R6kuUEDK6B5wpRNcF3GdpcgcQCCq6koG.svg" height=100 width=100 />
+                </li></a>
+                
+                <a href="ns2.html"><li class="">
+                    <img style="margin-right: 5px;" src="static/images/channels/EZjmJXLvPTmGM3DbB8cI8p9DxJvMQQO9.svg" height=100 width=100 />
+                </li></a>
+                
+                <a href="ns3.html"><li class="">
+                    <img style="margin-right: 5px;" src="static/images/channels/ew1t76NteuhyT29aDY1FZweJzwMrH8fZ.svg" height=100 width=100 />
+                </li></a>
+                
+                <a href="ns4.html"><li class="">
+                    <img style="margin-right: 5px;" src="static/images/channels/PHmkY4738r8z5lQ5G0DgeFmSelS210gV.svg" height=100 width=100 />
+                </li></a>
+                
+                <a href="ns5.html"><li class="">
+                    <img style="margin-right: 5px;" src="static/images/channels/5M0yHiJGychByyrD0xJjZRV34Pwmhjt7.svg" height=100 width=100 />
+                </li></a>
+                
+                <a href="ns6.html"><li class="">
+                    <img style="margin-right: 5px;" src="static/images/channels/3MbuSZvpfKnQUrzhwxE6QW4TQgHfHD8n.svg" height=100 width=100 />
+                </li></a>
+                
+                <a href="nsp.html"><li class="">
+                    <img style="margin-right: 5px;" src="static/images/channels/V6eF0qH8TDRYJGmkwhWe5Nu2Aw4qWT7d.svg" height=100 width=100 />
+                </li></a>
+                
+                <a href="nss.html"><li class="">
+                    <img style="margin-right: 5px;" src="static/images/channels/ttdCjpvNfmLezc2zPIJ39lW5KGv3PsLo.svg" height=100 width=100 />
+                </li></a>
+                
+                <a href="nspremier.html"><li class="">
+                    <img style="margin-right: 5px;" src="static/images/channels/lY0U9rS7IwQwXkcVh0ZMlOglnpabWz3g.svg" height=100 width=100 />
+                </li></a>
+                
+                <a href="nsn.html"><li class="">
+                    <img style="margin-right: 5px;" src="static/images/channels/iiqS5MddQ9km8JxJr4pAbIqrAAvxzJ9i.svg" height=100 width=100 />
+                </li></a>
+                
+            </ul>
+        </div>
+        <div class="channel-content" id="channel-content">
+            <div class="select-container">
+                <h2 style="color: red;">Βεβαιωθείτε ότι έχετε κάνει τις οδηγίες <a style="color: white;" href="dns.html">εδώ</a> για να παίξουν όλα τα κανάλια</h2>
+            </div>
+            <div align="center"><div id="frame" style="width: 100%;"><iframe data-aa='2349729' src='https://acceptable.a-ads.com/2349729' style='border:0px; padding:0; width:100%; height:100%; overflow:hidden; background-color: transparent;'></iframe><a style="display: block; text-align: right; font-size: 12px" id="frame-link" href="https://aads.com/campaigns/new/?source_id=2349729&source_type=ad_unit&partner=2349729">Advertise here</a></div></div>
+            <iframe id="player" src="https://antenasports.ru/cosmote3.php" allowfullscreen></iframe><br>
+        </div>
+    </div>
+    
+    <script>
+        function toggleMenu() {
+            const menuList = document.getElementById('menu-list');
+            menuList.classList.toggle('active');
+        }
+
+        window.onload = function() {
+            const activeItem = document.querySelector('.menu-list .active');
+            if (activeItem) {
+                activeItem.scrollIntoView({ block: 'center', behavior: 'smooth' });
+            }
+        };
+    </script>
+</body>
+</html>

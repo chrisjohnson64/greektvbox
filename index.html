@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreekTVBox - Τηλεόραση</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            height: 100%;
+            overflow: hidden;
+            background-color: #1b1b1b;
+            color: #fff;
+        }
+
+        .container {
+            display: flex;
+            height: 100vh;
+        }
+
+        .menu-list {
+            width: 25%;
+            background-color: #2b2b2b;
+            overflow-y: scroll;
+            position: relative;
+            transition: transform 0.3s ease-in-out;
+            scrollbar-width: none; /* For Firefox */
+            -ms-overflow-style: none;  /* Internet Explorer 10+ */
+        }
+
+        .menu-list::-webkit-scrollbar {
+            display: none; /* For Safari and Chrome */
+        }
+
+        .menu-list ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .menu-list li {
+            padding: 10px 15px;
+            cursor: pointer;
+            border-bottom: 1px solid #3b3b3b;
+            display: flex;
+            align-items: center;
+        }
+
+        .menu-list li:hover, .menu-list li.active {
+            background-color: #3b3b3b;
+        }
+
+        .channel-number {
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        .channel-content {
+            width: 75%;
+            background-color: #1b1b1b;
+            padding: 20px;
+            overflow-y: auto;
+            flex-grow: 1;
+            position: relative;
+        }
+
+        .channel-logo {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* This ensures the image covers the space without stretching */
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 10px;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            z-index: 1000;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: #fff;
+            margin: 4px 0;
+        }
+
+        @media (max-width: 768px) {
+            .menu-list {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                transform: translateX(-100%);
+                z-index: 999;
+                width: 70%;
+            }
+
+            .channel-content {
+                width: 100%;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .menu-list.active {
+                transform: translateX(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hamburger" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div class="container">
+        <div class="menu-list" id="menu-list">
+            <ul>
+                
+                <a href="cs1.html"><li class="">
+                    <img style="margin-right: 5px;" src="static/images/channels/zRE8H60030jviQGxzAoc7CZ69teP3mxi.png" height=100 width=100 />
+                </li></a>
+                
+                <a href="cs2.html"><li class="">
+                    <img style="margin-right: 5px;" src="static/images/channels/AChZw2r5GuHtMbd6SkR2UxxVzit95dcf.png" height=100 width=100 />
+                </li></a>
+                
+                <a href="cs3.html"><li class="">
+                    <img style="margin-right: 5px;" src="static/images/channels/jEnnUu8URy3TIR0CfQFbTf0pZsvsjIzN.png" height=100 width=100 />
+                </li></a>
+                
+                <a href="cs4.html"><li class="">
+                    <img style="margin-right: 5px;" src="static/images/channels/x6yCZ5pV7zawBnPED5ApCi7x1Pes1poc.png" height=100 width=100 />
+                </li></a>
+                
+                <a href="cs5.html"><li class="">
+                    <img style="margin-right: 5px;" src="static/images/channels/Pp7EsIuBVFQ4AN2jgZ9dDvfWqlbLGGwz.png" height=100 width=100 />
+                </li></a>
+                
+                <a href="cs6.html"><li class="">
+                    <img style="margin-right: 5px;" src="static/images/channels/28WpeUDAqhDAgjGaTSuJg4uWwVHr9RMs.png" height=100 width=100 />
+                </li></a>
+                
+                <a href="cs7.html"><li class="">
+                    <img style="margin-right: 5px;" src="static/images/channels/zgvdR5Y1GSMpqof5CF1gjGi4wKT78MqB.png" height=100 width=100 />
+                </li></a>
+                
+                <a href="cs8.html"><li class="">
+                    <img style="margin-right: 5px;" src="static/images/channels/ihitDdMxka4w1zRu9sLdNpFnFJsLhdMK.png" height=100 width=100 />
+                </li></a>
+                
+                <a href="cs9.html"><li class="">
+                    <img style="margin-right: 5px;" src="static/images/channels/aul5cEIegSUM5RWYCyIvvBRU4VDeX43R.png" height=100 width=100 />
+                </li></a>
+                
+                <a href="ns1.html"><li class="">
+                    <img style="margin-right: 5px;" src="static/images/channels/R6kuUEDK6B5wpRNcF3GdpcgcQCCq6koG.svg" height=100 width=100 />
+                </li></a>
+                
+                <a href="ns2.html"><li class="">
+                    <img style="margin-right: 5px;" src="static/images/channels/EZjmJXLvPTmGM3DbB8cI8p9DxJvMQQO9.svg" height=100 width=100 />
+                </li></a>
+                
+                <a href="ns3.html"><li class="">
+                    <img style="margin-right: 5px;" src="static/images/channels/ew1t76NteuhyT29aDY1FZweJzwMrH8fZ.svg" height=100 width=100 />
+                </li></a>
+                
+                <a href="ns4.html"><li class="">
+                    <img style="margin-right: 5px;" src="static/images/channels/PHmkY4738r8z5lQ5G0DgeFmSelS210gV.svg" height=100 width=100 />
+                </li></a>
+                
+                <a href="ns5.html"><li class="">
+                    <img style="margin-right: 5px;" src="static/images/channels/5M0yHiJGychByyrD0xJjZRV34Pwmhjt7.svg" height=100 width=100 />
+                </li></a>
+                
+                <a href="ns6.html"><li class="">
+                    <img style="margin-right: 5px;" src="static/images/channels/3MbuSZvpfKnQUrzhwxE6QW4TQgHfHD8n.svg" height=100 width=100 />
+                </li></a>
+                
+                <a href="nsp.html"><li class="">
+                    <img style="margin-right: 5px;" src="static/images/channels/V6eF0qH8TDRYJGmkwhWe5Nu2Aw4qWT7d.svg" height=100 width=100 />
+                </li></a>
+                
+                <a href="nss.html"><li class="">
+                    <img style="margin-right: 5px;" src="static/images/channels/ttdCjpvNfmLezc2zPIJ39lW5KGv3PsLo.svg" height=100 width=100 />
+                </li></a>
+                
+                <a href="nspremier.html"><li class="">
+                    <img style="margin-right: 5px;" src="static/images/channels/lY0U9rS7IwQwXkcVh0ZMlOglnpabWz3g.svg" height=100 width=100 />
+                </li></a>
+                
+                <a href="nsn.html"><li class="">
+                    <img style="margin-right: 5px;" src="static/images/channels/iiqS5MddQ9km8JxJr4pAbIqrAAvxzJ9i.svg" height=100 width=100 />
+                </li></a>
+                
+            </ul>
+        </div>
+        <div class="channel-content">
+            <img src="static/images/logo.png" class="channel-logo" />
+        </div>
+    </div>
+    <script>
+        function toggleMenu() {
+            const menuList = document.getElementById('menu-list');
+            menuList.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
